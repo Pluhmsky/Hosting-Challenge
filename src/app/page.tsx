@@ -14,9 +14,12 @@ function getYear(): number {
 
 
   return (
-      <main className="min-h-screen flex flex-col items-center justify-center text-center p-8">
-
+      <div className="min-h-screen">
       <Header />
+
+      <main className="flex flex-col items-center justify-center text-center p-8">
+
+
           {/*
           <Link href="/counter">
              <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 absolute top-5 left-5"
@@ -35,6 +38,7 @@ function getYear(): number {
     </h2>
     <p className="text-lg mt-">Current date: {getYear()}th</p>
 </main>
+      </div>
   )
     ;
 }
