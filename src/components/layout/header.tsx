@@ -34,10 +34,13 @@ export default function Header() {
     return (
 
         <header className="w-full bg-red-600 text-white px-6 py-4">
-            <div className="flex items-center justify-between ">
-                <h1 className="text-2xl font-bold">Mikey's Hosting</h1>
 
-                <div className="items-center hidden md:block">
+            <div className="flex items-center justify-between">
+                <div className="flex-1">
+                <h1 className="text-2xl font-bold">Mikey's Hosting</h1>
+                </div>
+
+                <div className="hidden md:block float-right flex-2">
                 <NavigationMenu>
                     <NavigationMenuList>
                         <Navbuttons
@@ -59,7 +62,7 @@ export default function Header() {
                                         />
 
                         <Navbuttons
-                            title="Home"
+                            title="Games"
                             items={[
                                 {
                                     href: "../counter",
@@ -76,7 +79,7 @@ export default function Header() {
                             ]}/>
 
                         <Navbuttons
-                            title="Home"
+                            title="Pricing"
                             items={[
                                 {
                                     href: "../counter",
@@ -93,7 +96,7 @@ export default function Header() {
                             ]}/>
 
                         <Navbuttons
-                            title="Home"
+                            title="Support"
                             items={[
                                 {
                                     href: "../counter",
@@ -110,7 +113,7 @@ export default function Header() {
                             ]}/>
 
                         <Navbuttons
-                            title="Home"
+                            title="About"
                             items={[
                                 {
                                     href: "../counter",
@@ -130,9 +133,10 @@ export default function Header() {
                         </NavigationMenu>
                     </div>
 
+                <div>
                 <Sheet>
                     <SheetTrigger asChild className ="block md:hidden text-2xl">
-                        <Button className="bg-black text-white">☰</Button>
+                        <Button className="bg-background text-white">☰</Button>
                     </SheetTrigger>
                     <SheetContent>
                         <SheetHeader>
@@ -159,7 +163,10 @@ export default function Header() {
                         </SheetFooter>
                     </SheetContent>
                 </Sheet>
+
+                </div>
             </div>
+
         </header>
     );
 }
