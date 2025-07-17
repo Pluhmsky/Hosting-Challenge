@@ -1,4 +1,3 @@
-//For the navigation bar at the top
 import {
     NavigationMenu,
     NavigationMenuList,
@@ -8,10 +7,6 @@ import {
     NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
 
-//My own nav button customization
-import navbuttons from "@/components/layout/navbuttons"
-
-//For the Hamburger in mobile view
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -27,167 +22,104 @@ import {
 } from "@/components/ui/sheet"
 
 import Link from "next/link"
-import Navbuttons from "@/components/layout/navbuttons";
-
+import Image from "next/image"
 
 export default function Header() {
     return (
-
-        <header className="w-full bg-red-600 text-white px-6 py-4">
-
-            <div className="flex items-center justify-between">
-                <div className="flex-1">
-                <h1 className="text-2xl font-bold">Mikey's Hosting</h1>
+        <header className="w-full bg-[#A87A5D] text-white px-6 py-4">
+            <div className="flex items-center justify-between w-full">
+                <div className="flex-shrink-0">
+                    <Image
+                        src="/images/logo.png"
+                        alt="logo"
+                        width={100}
+                        height={50}
+                    />
                 </div>
 
-                <div className="hidden md:block float-right flex-2">
-                <NavigationMenu>
-                    <NavigationMenuList>
-                        <Navbuttons
-                            title="Home"
-                                items={[
-                                    {
-                                        href: "../counter",
-                                        label: "Counter",
-                                        description:"A page for clicking a button many times"
+                <div className="hidden md:block">
+                    <NavigationMenu>
+                        <NavigationMenuList className="flex text-[#A87A5D]">
+                            <Button className="bg-background text-[#A87A5D] hover:bg-accent">
+                                <Link href="../counter">
+                                    Home
+                                </Link>
+                            </Button>
 
-                                },
-                                    {
-                                        href: "../counter",
-                                        label: "Counter",
-                                        description:"A page for clicking a button many times"
+                            <Button className="bg-background text-[#A87A5D] hover:bg-accent">
+                                <Link href="../counter">
+                                    Games
+                                </Link>
+                            </Button>
 
-                                    }
-                                ]}
-                                        />
+                            <Button className="bg-background text-[#A87A5D] hover:bg-accent">
+                                <Link href="../counter">
+                                    Pricing
+                                </Link>
+                            </Button>
 
-                        <Navbuttons
-                            title="Games"
-                            items={[
-                                {
-                                    href: "../counter",
-                                    label: "Counter",
-                                    description:"A page for clicking a button many times"
+                            <Button className="bg-background text-[#A87A5D] hover:bg-accent">
+                                <Link href="../counter">
+                                    Support
+                                </Link>
+                            </Button>
 
-                                },
-                                {
-                                    href: "../counter",
-                                    label: "Counter",
-                                    description:"A page for clicking a button many times"
+                            <Button className="bg-background text-[#A87A5D] hover:bg-accent">
+                                <Link href="../counter">
+                                    About
+                                </Link>
+                            </Button>
+                        </NavigationMenuList>
+                    </NavigationMenu>
+                </div>
 
-                                }
-                            ]}/>
-
-                        <Navbuttons
-                            title="Pricing"
-                            items={[
-                                {
-                                    href: "../counter",
-                                    label: "Counter",
-                                    description:"A page for clicking a button many times"
-
-                                },
-                                {
-                                    href: "../counter",
-                                    label: "Counter",
-                                    description:"A page for clicking a button many times"
-
-                                }
-                            ]}/>
-
-                        <Navbuttons
-                            title="Support"
-                            items={[
-                                {
-                                    href: "../counter",
-                                    label: "Counter",
-                                    description:"A page for clicking a button many times"
-
-                                },
-                                {
-                                    href: "../counter",
-                                    label: "Counter",
-                                    description:"A page for clicking a button many times"
-
-                                }
-                            ]}/>
-
-                        <Navbuttons
-                            title="About"
-                            items={[
-                                {
-                                    href: "../counter",
-                                    label: "Counter",
-                                    description:"A page for clicking a button many times"
-
-                                },
-                                {
-                                    href: "../counter",
-                                    label: "Counter",
-                                    description:"A page for clicking a button many times"
-
-                                }
-                            ]}/>
-
-                         </NavigationMenuList>
-                        </NavigationMenu>
-                    </div>
-
-                <div>
-                <Sheet>
-                    <SheetTrigger asChild className ="block md:hidden text-2xl">
-                        <Button className="bg-background text-white">☰</Button>
-                    </SheetTrigger>
-                    <SheetContent>
-                        <SheetHeader>
-                            <SheetTitle>Edit profile</SheetTitle>
+                <div className="md:hidden">
+                    <Sheet>
+                        <SheetTrigger asChild className="text-2xl">
+                            <Button className="bg-background text-[#A87A5D]">☰</Button>
+                        </SheetTrigger>
+                        <SheetContent>
+                            <SheetHeader>
+                                <SheetTitle className="text-3xl font-bold text-[#2D221C] ">Menu</SheetTitle>
+                                <hr className="border-[#2D221C] border-1" />
+                            </SheetHeader>
                             <SheetDescription>
-                                Make changes to your profile here. Click save when you&apos;re done.
-                            </SheetDescription>
-                        </SheetHeader>
-                        <div className="grid flex-1 auto-rows-min gap-6 px-4">
-                            <div className="grid gap-3">
-                                <Label htmlFor="sheet-demo-name">Name</Label>
-                                <Input id="sheet-demo-name" defaultValue="Pedro Duarte" />
-                            </div>
-                            <div className="grid gap-3">
-                                <Label htmlFor="sheet-demo-username">Username</Label>
-                                <Input id="sheet-demo-username" defaultValue="@peduarte" />
-                            </div>
-                        </div>
-                        <SheetFooter>
-                            <Button type="submit">Save changes</Button>
-                            <SheetClose asChild>
-                                <Button variant="outline">Close</Button>
-                            </SheetClose>
-                        </SheetFooter>
-                    </SheetContent>
-                </Sheet>
+                            <div className="flex flex-col gap-4 mt-6">
+                                <Button className="bg-background text-[#A87A5D] hover:bg-accent w-full justify-start">
+                                    <Link href="../counter">
+                                        Home
+                                    </Link>
+                                </Button>
 
+                                <Button className="bg-background text-[#A87A5D] hover:bg-accent w-full justify-start">
+                                    <Link href="../counter">
+                                        Games
+                                    </Link>
+                                </Button>
+
+                                <Button className="bg-background text-[#A87A5D] hover:bg-accent w-full justify-start">
+                                    <Link href="../counter">
+                                        Pricing
+                                    </Link>
+                                </Button>
+
+                                <Button className="bg-background text-[#A87A5D] hover:bg-accent w-full justify-start">
+                                    <Link href="../counter">
+                                        Support
+                                    </Link>
+                                </Button>
+
+                                <Button className="bg-background text-[#A87A5D] hover:bg-accent w-full justify-start">
+                                    <Link href="../counter">
+                                        About
+                                    </Link>
+                                </Button>
+                            </div>
+                            </SheetDescription>
+                        </SheetContent>
+                    </Sheet>
                 </div>
             </div>
-
         </header>
     );
-}
-
-
-function ListItem({
-                      title,
-                      children,
-                      href,
-                      ...props
-                  }: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
-    return (
-        <li {...props}>
-            <NavigationMenuLink asChild>
-                <Link href={href}>
-                    <div className="text-sm leading-none font-medium">{title}</div>
-                    <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
-                        {children}
-                    </p>
-                </Link>
-            </NavigationMenuLink>
-        </li>
-    )
 }
