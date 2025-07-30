@@ -18,7 +18,7 @@ export default function ClickCounterPage() {
                 Switch to Light Mode
             </button>
 
-            {/* Rest of your existing code... */}
+
             <h1 className="text-2xl font-bold mb-4">Click Counter</h1>
 
             <button
@@ -27,7 +27,7 @@ export default function ClickCounterPage() {
             >
                 Back
             </button>
-            {/* ... rest of your existing buttons and components ... */}
+
         </main>
     );
 }

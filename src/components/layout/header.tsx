@@ -23,10 +23,11 @@ import {
 
 import Link from "next/link"
 import Image from "next/image"
+import {HamburgerIcon, LucideHamburger, Menu, SandwichIcon} from "lucide-react";
 
 export default function Header() {
     return (
-        <header className="w-full bg-[#A87A5D] text-white px-6 py-4">
+        <header className="w-full bg-[#A87A5D] text-white px-6 py-4 sticky top-0 z-50">
             <div className="flex items-center justify-between w-full">
                 <div className="flex-shrink-0">
                     <Image
@@ -39,32 +40,32 @@ export default function Header() {
 
                 <div className="hidden md:block">
                     <NavigationMenu>
-                        <NavigationMenuList className="flex text-[#A87A5D]">
-                            <Button className="bg-background text-[#A87A5D] hover:bg-accent">
+                        <NavigationMenuList className="flex ">
+                            <Button>
                                 <Link href="../counter">
                                     Home
                                 </Link>
                             </Button>
 
-                            <Button className="bg-background text-[#A87A5D] hover:bg-accent">
+                            <Button>
                                 <Link href="../counter">
                                     Games
                                 </Link>
                             </Button>
 
-                            <Button className="bg-background text-[#A87A5D] hover:bg-accent">
+                            <Button>
                                 <Link href="../counter">
                                     Pricing
                                 </Link>
                             </Button>
 
-                            <Button className="bg-background text-[#A87A5D] hover:bg-accent">
+                            <Button>
                                 <Link href="../counter">
                                     Support
                                 </Link>
                             </Button>
 
-                            <Button className="bg-background text-[#A87A5D] hover:bg-accent">
+                            <Button>
                                 <Link href="../counter">
                                     About
                                 </Link>
@@ -76,7 +77,7 @@ export default function Header() {
                 <div className="md:hidden">
                     <Sheet>
                         <SheetTrigger asChild className="text-2xl">
-                            <Button className="bg-background text-[#A87A5D]">☰</Button>
+                            <Button className="active:bg-primary/90"><Menu/></Button>
                         </SheetTrigger>
                         <SheetContent>
                             <SheetHeader>
@@ -85,7 +86,7 @@ export default function Header() {
                             </SheetHeader>
                             <SheetDescription>
                             <div className="flex flex-col gap-4 mt-6">
-                                <Button className="bg-background text-[#A87A5D] hover:bg-accent w-full justify-start">
+                                <Button className="bg-background  hover:bg-accent w-full justify-start">
                                     <Link href="../counter">
                                         Home
                                     </Link>
