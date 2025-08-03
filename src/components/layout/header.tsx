@@ -42,19 +42,19 @@ export default function Header() {
                     <NavigationMenu>
                         <NavigationMenuList className="flex ">
                             <Button>
-                                <Link href="../counter">
+                                <Link href="/">
                                     Home
                                 </Link>
                             </Button>
 
                             <Button>
-                                <Link href="../counter">
-                                    Games
+                                <Link href="/dashboard">
+                                    Dashboard
                                 </Link>
                             </Button>
 
                             <Button>
-                                <Link href="../counter">
+                                <Link href="/pricing">
                                     Pricing
                                 </Link>
                             </Button>

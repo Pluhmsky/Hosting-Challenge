@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/layout/header";
+import {Button} from "@/components/ui/button";
+
 
 export default function Home() {
   const name = "Mikey";
@@ -30,9 +32,47 @@ export default function Home() {
 
 
         <Header/>
-        <div className="text-4xl font-bold justify-center items-center text-center p-20 ">Tribe Hosting</div>
 
-        <main className="flex flex-col text-[#F3E7CC] p-8 relative bg-background/20 backdrop-blur-sm w-1/2 h-screen mx-auto rounded-lg shadow-lg border border-[#F3E7CC]/20">
+          <div className="flex flex-col gap-6 items-center text-center max-w-4xl mx-auto mt-32">
+    <h1 className="text-5xl font-bold text-[#F3E7CC] animate-fade-in">
+        Ark: Survival Evolved Server Hosting
+    </h1>
+    
+    <p className="text-xl text-[#F3E7CC]/90 mb-4">
+        Host your ultimate dinosaur adventure with our premium, high-performance servers. 
+        Get started in minutes with easy setup and 24/7 support.
+    </p>
+    
+    <div className="flex flex-col gap-4 items-center">
+        <div className="grid grid-cols-3 gap-8 text-[#F3E7CC]/80 mb-6">
+            <div className="flex flex-col items-center">
+                <span className="text-2xl font-bold mb-2">99.9%</span>
+                <span className="text-sm">Uptime Guaranteed</span>
+            </div>
+            <div className="flex flex-col items-center">
+                <span className="text-2xl font-bold mb-2">Instant</span>
+                <span className="text-sm">Server Setup</span>
+            </div>
+            <div className="flex flex-col items-center">
+                <span className="text-2xl font-bold mb-2">24/7</span>
+                <span className="text-sm">Technical Support</span>
+            </div>
+        </div>
+        
+        <Button 
+            className="text-2xl w-fit px-8 py-4 bg-accent text-background hover:bg-accent/80 hover:brightness-150  transform transition-all hover:scale-105"
+            variant="default"
+        >
+            Start Hosting Now
+        </Button>
+        
+        <p className="text-sm text-[#F3E7CC]/70 mt-2">
+            No credit card required • Free 24-hour trial
+        </p>
+    </div>
+</div>
+
+        <main className="flex flex-col text-[#F3E7CC] m-7 p-9 relative bg-background/20 backdrop-blur-sm w-1/2 h-fit mx-auto rounded-lg shadow-lg border border-[#F3E7CC]/20">
 
         <div className=" px-2 rounded-2xl flex flex-col gap-2 text-lg text-center">
         <div>
@@ -74,8 +114,6 @@ export default function Home() {
 </div>
         </div>
       </main>
-
-
 
     </div>
   );
